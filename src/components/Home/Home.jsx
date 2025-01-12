@@ -21,7 +21,7 @@ function Home() {
 
   return (
     <div style={{ marginLeft: '100px', marginRight: '100px', width: '1280px', margin: 'auto'}}>
-      <h1>Bmw catalog</h1>
+      <h1 style={{ padding: '10px' }}>Bmw catalog</h1>
       <input
         style={{ width: '300px', height: '30px', padding: '5px', borderRadius: '10px', border: 'none', marginBottom: '20px'}}
         type="text"
