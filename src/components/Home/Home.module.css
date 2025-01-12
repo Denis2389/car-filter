@@ -1,3 +1,11 @@
+h1 {
+    background-color: rgba(0, 0, 255, 0.629);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
 .item {
     border: 1px solid gray;
     margin-bottom: 30px;
@@ -21,4 +29,16 @@
 
 .info p {
     margin-bottom: 10px;
+}
+
+.info button {
+    padding: 10px;
+    background: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: background 0.25s ease-in-out;
+}
+
+.info button:hover {
+    background: rgba(16, 212, 16, 0.65);
 }

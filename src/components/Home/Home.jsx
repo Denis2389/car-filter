@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CarItem from '../car-item/CarItem.jsx';
 import CreateCarForm from '../create-car-form/CreateCarForm.jsx';
 import { cars as carsData } from './cars.data.js';
@@ -6,6 +6,12 @@ import { cars as carsData } from './cars.data.js';
 function Home() {
   const [cars, setCars] = useState(carsData);
   const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    const savedCard = JSON.parse(localStorage.getItem('cars')) || cars;
+    setCars(savedCard)
+  }, [cars])
+
   const filteredCars = cars.filter((car) => {
     return (
       car.name.toLowerCase().includes(search.toLowerCase())
@@ -14,10 +20,10 @@ function Home() {
   );
 
   return (
-    <div>
+    <div style={{ marginLeft: '100px', marginRight: '100px' }}>
       <h1>Bmw catalog</h1>
-
       <input
+        style={{ width: '300px', height: '30px', padding: '5px', borderRadius: '10px', border: 'none', marginBottom: '20px'}}
         type="text"
         placeholder="Search by name"
         value={search}
